@@ -232,19 +232,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* CTA - Total */}
-      <footer className="px-6 py-16 sm:px-8">
-        <div className="mx-auto max-w-4xl">
-          <div className="glow-accent rounded-2xl border border-violet-500/30 bg-gradient-to-br from-violet-500/10 to-indigo-500/10 p-10 text-center">
-            <p className="text-sm uppercase tracking-wider text-zinc-400">專案總額</p>
-            <p className="mt-3 text-5xl font-bold text-white sm:text-6xl">
-              NT$ <span className="gradient-text">138,000</span>
-            </p>
-            <p className="mt-4 text-sm text-zinc-500">未稅 · 一站式經紀顧問服務</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
