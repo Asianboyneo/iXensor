@@ -37,37 +37,24 @@ export default function Home() {
       {menuOpen && (
         <button
           type="button"
-          className="fixed inset-0 z-40 bg-black/30 backdrop-blur-[2px]"
+          className="fixed inset-0 z-40"
           aria-label="關閉目錄"
           onClick={() => setMenuOpen(false)}
         />
       )}
 
-      {/* 往左滑出的菜單 */}
+      {/* 浮動透明菜單（與先前樣式一致） */}
       <nav
-        className={`fixed right-0 top-0 z-50 flex h-full w-56 flex-col gap-1 border-l border-white/[0.08] bg-black/90 px-4 py-6 shadow-2xl backdrop-blur-md transition-transform duration-300 ease-out ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed right-4 top-1/2 z-50 -translate-y-1/2 flex flex-col gap-2 rounded-xl border border-white/[0.08] bg-black/20 px-3 py-3 backdrop-blur-md transition-opacity duration-200 ${
+          menuOpen ? "translate-x-0 opacity-100" : "pointer-events-none translate-x-2 opacity-0"
         }`}
       >
-        <div className="mb-4 flex items-center justify-between">
-          <span className="text-sm font-medium uppercase tracking-wider text-violet-400">目錄</span>
-          <button
-            type="button"
-            onClick={() => setMenuOpen(false)}
-            className="rounded p-1.5 text-zinc-500 transition-colors hover:bg-white/10 hover:text-white"
-            aria-label="關閉"
-          >
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
         {NAV_ITEMS.map(({ id, label }) => (
           <button
             key={id}
             type="button"
             onClick={() => handleNavClick(id)}
-            className="rounded-lg px-3 py-2.5 text-left text-sm font-medium text-zinc-400 transition-colors hover:bg-white/[0.08] hover:text-violet-300"
+            className="rounded-lg px-3 py-2 text-left text-sm font-medium text-zinc-400 transition-colors hover:bg-white/[0.08] hover:text-violet-300 focus:outline-none focus:ring-2 focus:ring-violet-500/50"
           >
             {label}
           </button>
