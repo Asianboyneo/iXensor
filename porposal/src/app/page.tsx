@@ -246,7 +246,10 @@ export default function Home() {
                   <tr className="border-t-2 border-white/[0.1] bg-white/[0.06]">
                     <td className="px-4 py-4 font-medium text-white">總計</td>
                     <td className="px-4 py-4 text-zinc-400"></td>
-                    <td className="px-4 py-4 text-right font-semibold text-violet-300">$190,000(未稅）</td>
+                    <td className="px-4 py-4 text-right">
+                      <span className="font-semibold text-violet-300">$190,000</span>
+                      <span className="ml-1.5 text-xs font-normal text-zinc-500">（未稅）</span>
+                    </td>
                   </tr>
                 </tbody>
               </table>
