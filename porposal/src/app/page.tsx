@@ -263,7 +263,7 @@ export default function Home() {
             三、專案服務模組選擇 Service Packages
           </h2>
           <p className="mb-10 text-sm text-zinc-400">
-            為確保專案品質並節省貴司行政對接成本，經紀顧問提供以下模組化選擇。加值項目（A、B、C）將根據貴司需求等級（如：標準/資深）另行報價
+            為確保專案品質並節省貴司行政對接成本，經紀顧問提供以下模組化選擇。將根據貴司需求等級（如：標準/資深）另行報價
           </p>
 
           <div className="overflow-hidden rounded-xl border border-white/[0.08]">
