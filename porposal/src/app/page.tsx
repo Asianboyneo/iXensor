@@ -24,7 +24,7 @@ export default function Home() {
             </div>
             <div>
               <span className="text-zinc-500">執行期</span>
-              <p className="mt-0.5 font-medium">2026.03.01 – 2026.05.05（共約 9 週）</p>
+              <p className="mt-0.5 font-medium">四檔節目專案</p>
             </div>
           </div>
         </div>
@@ -193,20 +193,17 @@ export default function Home() {
           <div className="overflow-hidden rounded-xl border border-white/[0.08]">
             <div className="divide-y divide-white/[0.06]">
               {[
-                { name: "方案 1", content: "核心顧問服務", desc: "包含上述 Phase 1-4 所有專業輔佐服務。" },
-                { name: "方案 1 + A", content: "核心服務 + 妝髮對接", desc: "經紀人負責開發、篩選合適妝髮師並統籌現場執行。" },
-                { name: "方案 1 + B", content: "核心服務 + 造型規劃", desc: "經紀人對接專業造型資源，針對節目調性提供形象穿搭建議。" },
-                { name: "方案 1 + C", content: "核心服務 + 媒體培訓", desc: "經紀人引薦並安排資深媒體導師，進行深度對口訓練。" },
+                { title: "核心顧問服務", desc: "包含上述 Phase 1-4 所有專業輔佐服務。" },
+                { title: "核心服務 + 妝髮對接", desc: "經紀人負責開發、篩選合適妝髮師並統籌現場執行。" },
+                { title: "核心服務 + 造型規劃", desc: "經紀人對接專業造型資源，針對節目調性提供形象穿搭建議。" },
+                { title: "核心服務 + 媒體培訓", desc: "經紀人引薦並安排資深媒體導師，進行深度對口訓練。" },
               ].map((pkg, i) => (
                 <div
                   key={i}
-                  className="flex flex-col gap-2 bg-white/[0.02] px-6 py-5 transition-colors hover:bg-white/[0.04] sm:flex-row sm:items-center sm:gap-8"
+                  className="flex flex-col gap-2 bg-white/[0.02] px-6 py-5 transition-colors hover:bg-white/[0.04]"
                 >
-                  <div className="w-28 shrink-0 font-medium text-violet-300">{pkg.name}</div>
-                  <div className="flex-1">
-                    <p className="font-medium text-white">{pkg.content}</p>
-                    <p className="mt-0.5 text-sm text-zinc-500">{pkg.desc}</p>
-                  </div>
+                  <p className="font-medium text-white">{pkg.title}</p>
+                  <p className="text-sm text-zinc-500">{pkg.desc}</p>
                 </div>
               ))}
             </div>
@@ -215,6 +212,46 @@ export default function Home() {
           <p className="mt-6 text-sm text-zinc-500">
             備註：加值項目旨在節省貴司「尋人、比價、溝通、監管」之時間成本，所有外部協力廠商之選定，最終仍由貴司依報價核可後執行。
           </p>
+
+          {/* 報價明細 */}
+          <div className="mt-12">
+            <h3 className="mb-4 text-sm font-medium uppercase tracking-wider text-violet-400">
+              報價明細
+            </h3>
+            <div className="overflow-hidden rounded-xl border border-white/[0.08]">
+              <table className="w-full text-left text-sm">
+                <thead>
+                  <tr className="border-b border-white/[0.08] bg-white/[0.04]">
+                    <th className="px-4 py-3 font-medium text-zinc-300">項目</th>
+                    <th className="px-4 py-3 font-medium text-zinc-300">說明</th>
+                    <th className="px-4 py-3 font-medium text-zinc-300 text-right">金額 (TWD)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/[0.06]">
+                  <tr className="bg-white/[0.02]">
+                    <td className="px-4 py-3 text-white">核心顧問服務 (Phase 1-4)</td>
+                    <td className="px-4 py-3 text-zinc-400">9 週專屬顧問服務，含 4 場節目全流程執行。</td>
+                    <td className="px-4 py-3 text-violet-300 text-right">$150,000</td>
+                  </tr>
+                  <tr className="bg-white/[0.02]">
+                    <td className="px-4 py-3 text-white">妝髮梳化</td>
+                    <td className="px-4 py-3 text-zinc-400">4 場定點妝髮</td>
+                    <td className="px-4 py-3 text-violet-300 text-right">$15,000</td>
+                  </tr>
+                  <tr className="bg-white/[0.02]">
+                    <td className="px-4 py-3 text-white">口播培訓顧問</td>
+                    <td className="px-4 py-3 text-zinc-400">1 場專業口播訓練與資料整理。</td>
+                    <td className="px-4 py-3 text-violet-300 text-right">$25,000</td>
+                  </tr>
+                  <tr className="border-t-2 border-white/[0.1] bg-white/[0.06]">
+                    <td className="px-4 py-4 font-medium text-white">總計</td>
+                    <td className="px-4 py-4 text-zinc-400"></td>
+                    <td className="px-4 py-4 text-right font-semibold text-violet-300">$190,000(未稅）</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -222,7 +259,7 @@ export default function Home() {
       <section className="border-b border-white/[0.08] px-6 py-16 sm:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-10 text-sm font-medium uppercase tracking-wider text-violet-400">
-            四、專案備註與責任界定
+            專案備註與責任界定
           </h2>
 
           <div className="space-y-6 text-sm text-zinc-400">

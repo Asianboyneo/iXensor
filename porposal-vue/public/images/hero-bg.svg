@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 640" fill="none">
+  <defs>
+    <linearGradient id="hero-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f5f5"/>
+      <stop offset="100%" style="stop-color:#e8e8e8"/>
+    </linearGradient>
+    <pattern id="hero-dots" patternUnits="userSpaceOnUse" width="32" height="32">
+      <circle cx="16" cy="16" r="0.8" fill="#d4d4d4" fill-opacity="0.4"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#hero-grad)"/>
+  <rect width="100%" height="100%" fill="url(#hero-dots)"/>
+</svg>

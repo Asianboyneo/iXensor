@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* ========== 白色簡約風格 ========== */
+:root {
+  --color-white: #ffffff;
+  --color-page: #fafafa;
+  --color-card: #ffffff;
+  --color-ink: #171717;
+  --color-muted: #525252;
+  --color-soft: #737373;
+  --color-border: #e5e5e5;
+  --color-accent: #171717;
+  --color-accent-light: #404040;
+  --font-serif: "Cormorant Garamond", "Noto Serif TC", Georgia, serif;
+  --font-sans: "Noto Sans TC", system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-white: var(--color-white);
+  --color-page: var(--color-page);
+  --color-card: var(--color-card);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-soft: var(--color-soft);
+  --color-border: var(--color-border);
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+/* ========== 基底 ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== 區塊標籤（簡約灰、小寫大寫） ========== */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-soft);
+}
+
+/* ========== 選用：hover 底線（簡約黑） ========== */
+.hover-underline {
+  position: relative;
+}
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  left: 1;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--color-ink);
+  transition: width 0.25s ease;
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* ========== 區塊背景圖 ========== */
+.section-bg {
+  position: relative;
+  background-color: var(--color-page);
+  background-image: var(--bg-image);
+  background-size: cover;
+  /* 上下位置：center | center top | center bottom | center 20% | center 80% 等 */
+  background-position: var(--bg-position, center);
+  background-repeat: no-repeat;
+}
+
+.section-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--color-white);
+  opacity: 0.10;
+  pointer-events: none;
+}
+
+.section-bg-content {
+  position: relative;
+  z-index: 1;
+}
