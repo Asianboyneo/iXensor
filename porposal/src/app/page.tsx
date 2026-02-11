@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 const NAV_ITEMS = [
   { id: "section-1", label: "專案執行內容" },
   { id: "section-2", label: "服務範疇核心" },
@@ -12,16 +14,60 @@ function scrollToSection(id: string) {
 }
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNavClick = (id: string) => {
+    scrollToSection(id);
+    setMenuOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-zinc-100">
-      {/* 一鍵導覽 */}
-      <nav className="fixed right-4 top-1/2 z-50 -translate-y-1/2 flex flex-col gap-2 rounded-xl border border-white/[0.08] bg-black/20 px-3 py-3 backdrop-blur-md">
+      {/* 目錄觸發按鈕：收合時只顯示此按鈕 */}
+      <button
+        type="button"
+        onClick={() => setMenuOpen(true)}
+        className="fixed right-0 top-1/2 z-40 -translate-y-1/2 rounded-l-lg border border-r-0 border-white/[0.08] bg-black/20 px-2 py-4 text-xs font-medium text-zinc-400 backdrop-blur-md transition-colors hover:bg-black/40 hover:text-violet-300"
+        aria-label="開啟目錄"
+      >
+        目錄
+      </button>
+
+      {/* 點擊背板關閉 */}
+      {menuOpen && (
+        <button
+          type="button"
+          className="fixed inset-0 z-40 bg-black/30 backdrop-blur-[2px]"
+          aria-label="關閉目錄"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+
+      {/* 往左滑出的菜單 */}
+      <nav
+        className={`fixed right-0 top-0 z-50 flex h-full w-56 flex-col gap-1 border-l border-white/[0.08] bg-black/90 px-4 py-6 shadow-2xl backdrop-blur-md transition-transform duration-300 ease-out ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="mb-4 flex items-center justify-between">
+          <span className="text-sm font-medium uppercase tracking-wider text-violet-400">目錄</span>
+          <button
+            type="button"
+            onClick={() => setMenuOpen(false)}
+            className="rounded p-1.5 text-zinc-500 transition-colors hover:bg-white/10 hover:text-white"
+            aria-label="關閉"
+          >
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
         {NAV_ITEMS.map(({ id, label }) => (
           <button
             key={id}
             type="button"
-            onClick={() => scrollToSection(id)}
-            className="rounded-lg px-3 py-2 text-left text-sm font-medium text-zinc-400 transition-colors hover:bg-white/[0.08] hover:text-violet-300 focus:outline-none focus:ring-2 focus:ring-violet-500/50"
+            onClick={() => handleNavClick(id)}
+            className="rounded-lg px-3 py-2.5 text-left text-sm font-medium text-zinc-400 transition-colors hover:bg-white/[0.08] hover:text-violet-300"
           >
             {label}
           </button>
