@@ -60,27 +60,31 @@ export default function Home() {
             {[
               {
                 date: "3/23",
-                title: "《下班經濟學》",
+                title: "風傳媒 《下班經濟學》",
                 focus: "首場策略性亮相，定調雙領域權威形象。",
                 desc: "作為專案的首場重要發布，目標在於精準建立陳董事長在「財經投資」與「健康醫療科技」雙領域的專業領袖地位。透過深入淺出的內容設計，向潛在投資人與大眾傳遞安盛生科的研發價值，為後續系列宣傳奠定高格局的專業基調。",
+                tags: ["#投資理財", "#時事財經", "#生活理財"],
               },
               {
                 date: "4/09",
                 title: "《業問 行業的哉問》",
                 focus: "深化產業洞察，確保商業論述（Business Talk）精準轉譯。",
                 desc: "鎖定垂直產業的高端受眾，進一步強化安盛生科在生技產業鏈中的深度洞察。透過精確的商業語意轉譯，將複雜的技術優勢（Medical Tech）轉化為清晰的商機動能，協助董事長在訪談中掌握對話主導權，實現與利害關係人的精準對接。",
+                tags: ["#生活日常", "#生人經驗", "#人物訪談"],
               },
               {
                 date: "4/13",
-                title: "《曾博恩》",
+                title: "《博音》",
                 focus: "高節奏現場應對，強化模擬演練（Mock Interview）與心理建設。",
                 desc: "針對該節目高頻率、快節奏且具隨機挑戰的訪談特質，進行高強度的實戰模擬演練。協助董事長在維持幽默感與親和力的同時，精準守住企業核心立場，透過壓力測試與反應訓練，展現睿智且不失穩重的高階管理者風範。",
+                tags: ["#喜劇知識", "#社會觀察", "#領域專家訪談"],
               },
               {
                 date: "5/05",
                 title: "《吳淡如人生實用商學院》",
                 focus: "專案總結場次，聚焦商業邏輯梳理與品牌調性最終校準。",
                 desc: "作為系列專案的壓軸場次，重點在於將安盛生科的品牌願景與市場實務邏輯進行深度融合。透過吳淡如老師具備廣大影響力的商學視角，將企業核心價值轉化為具備「長尾效應」的品牌資產，確保專案收尾時品牌形象的高度統一與延續。",
+                tags: ["#商業趨勢", "#投資理財", "#企業管理"],
               },
             ].map((item, i) => (
               <div
@@ -93,6 +97,15 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-medium text-white">{item.title}</h3>
+                  {"tags" in item && item.tags?.length ? (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {item.tags.map((tag: string, j: number) => (
+                        <span key={j} className="rounded-full bg-white/10 px-3 py-0.5 text-xs text-zinc-300">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
                   <p className="mt-1 text-sm font-medium text-violet-300/90">{item.focus}</p>
                   <p className="mt-3 text-sm leading-relaxed text-zinc-400">{item.desc}</p>
                 </div>
