@@ -110,83 +110,69 @@ export default function Home() {
       <section id="section-1" className="scroll-mt-6 border-b border-white/[0.08] px-6 py-16 sm:px-8 sm:scroll-mt-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-10 text-sm font-medium uppercase tracking-wider text-violet-400">
-            一、專案執行時程 Milestones
+            一、專案執行時程
           </h2>
-          <p className="mb-12 text-zinc-400">本專案包含四場關鍵節目的全流程經紀</p>
+          <p className="mb-8 text-zinc-400">本專案包含四場關鍵節目的全流程經紀</p>
 
-          <div className="space-y-0">
-            {[
-              {
-                shootDate: "3/9 ~ 3/13",
-                releaseDate: "4/9",
-                title: "《業問 行業的哉問》",
-                focus: "深化產業洞察，確保商業論述精準轉譯。",
-                desc: "鎖定垂直產業的高端受眾，進一步強化安盛生科在生技產業鏈中的深度洞察。透過精確的商業語意轉譯，將複雜的技術優勢轉化為清晰的商機動能，協助董事長在訪談中掌握對話主導權，實現與利害關係人的精準對接。",
-                tags: ["#生活日常", "#生人經驗", "#人物訪談"],
-              },
-              {
-                shootDate: "3/16 ~ 3/20",
-                releaseDate: "4/13",
-                title: "《博音》",
-                focus: "高節奏現場應對，強化模擬演練與心理建設。",
-                desc: "針對該節目高頻率、快節奏且具隨機挑戰的訪談特質，進行高強度的實戰模擬演練。協助董事長在維持幽默感與親和力的同時，精準守住企業核心立場，透過壓力測試與反應訓練，展現睿智且不失穩重的高階管理者風範。",
-                tags: ["#喜劇知識", "#社會觀察", "#領域專家訪談"],
-              },
-              {
-                shootDate: "3/23",
-                releaseDate: "4/23",
-                title: "風傳媒 《下班經濟學》",
-                focus: "首場策略性亮相，定調雙領域權威形象。",
-                desc: "作為專案的首場重要發布，目標在於精準建立陳董事長在「財經投資」與「健康醫療科技」雙領域的專業領袖地位。透過深入淺出的內容設計，向潛在投資人與大眾傳遞安盛生科的研發價值，為後續系列宣傳奠定高格局的專業基調。",
-                tags: ["#投資理財", "#時事財經", "#生活理財"],
-              },
-              {
-                date: "未確定",
-                title: "《吳淡如人生實用商學院》",
-                focus: "專案總結場次，聚焦商業邏輯梳理與品牌調性最終校準。",
-                desc: "作為系列專案的壓軸場次，重點在於將安盛生科的品牌願景與市場實務邏輯進行深度融合。透過吳淡如老師具備廣大影響力的商學視角，將企業核心價值轉化為具備「長尾效應」的品牌資產，確保專案收尾時品牌形象的高度統一與延續。",
-                tags: ["#商業趨勢", "#投資理財", "#企業管理"],
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="group flex flex-col gap-4 border-b border-white/[0.06] py-8 last:border-0 sm:flex-row sm:items-start sm:gap-12"
-              >
-                <div className="flex items-center gap-4 sm:w-32 sm:shrink-0">
-                  {"shootDate" in item && item.releaseDate ? (
-                    <div className="flex flex-col gap-1 rounded-lg border border-white/[0.06] bg-white/[0.03] px-3 py-2">
-                      <div className="flex items-baseline gap-1.5">
-                        <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-500">拍攝</span>
-                        <span className="text-sm font-semibold text-violet-400">{item.shootDate}</span>
-                      </div>
-                      <div className="flex items-baseline gap-1.5">
-                        <span className="text-[10px] font-medium uppercase tracking-wider text-zinc-500">上片</span>
-                        <span className="text-sm font-semibold text-violet-400">{item.releaseDate}</span>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="flex flex-col justify-center rounded-lg border border-white/[0.06] bg-white/[0.03] px-3 py-2">
-                      <span className="text-lg font-semibold text-violet-400">{(item as { date?: string }).date}</span>
-                    </div>
-                  )}
-                  <span className="hidden h-px flex-1 bg-white/[0.08] sm:block" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-medium text-white">{item.title}</h3>
-                  {"tags" in item && item.tags?.length ? (
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      {item.tags.map((tag: string, j: number) => (
-                        <span key={j} className="rounded-full bg-white/10 px-3 py-0.5 text-xs text-zinc-300">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  ) : null}
-                  <p className="mt-1 text-sm font-medium text-violet-300/90">{item.focus}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+          <div className="overflow-hidden rounded-xl border border-white/[0.08]">
+            <table className="w-full table-fixed text-left">
+              <colgroup>
+                <col className="w-[11rem]" />
+                <col />
+              </colgroup>
+              <thead>
+                <tr className="border-b border-white/[0.08] bg-white/[0.04]">
+                  <th className="px-5 py-4 text-left text-xs font-medium uppercase tracking-wider text-zinc-500">日期</th>
+                  <th className="px-5 py-4 text-left text-xs font-medium uppercase tracking-wider text-zinc-500">節目主題</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    shootDate: "3/9 ~ 3/13",
+                    releaseDate: "4/9",
+                    title: "《業問 行業的哉問》",
+                  },
+                  {
+                    shootDate: "3/16 ~ 3/20",
+                    releaseDate: "4/13",
+                    title: "《博音》",
+                  },
+                  {
+                    shootDate: "3/23",
+                    releaseDate: "4/23",
+                    title: "《下班經濟學》 風傳媒",
+                  },
+                  {
+                    date: "未確定",
+                    title: "《吳淡如人生實用商學院》",
+                  },
+                ].map((item, i) => (
+                  <tr
+                    key={i}
+                    className="border-b border-white/[0.06] transition-colors last:border-0 hover:bg-white/[0.03]"
+                  >
+                    <td className="px-5 py-4 align-middle">
+                      {"shootDate" in item && item.releaseDate ? (
+                        <div className="flex flex-col gap-0.5">
+                          <span className="text-sm text-violet-400">
+                            <span className="text-zinc-500">拍攝 </span>{item.shootDate}
+                          </span>
+                          <span className="text-sm text-violet-400">
+                            <span className="text-zinc-500">上片 </span>{item.releaseDate}
+                          </span>
+                        </div>
+                      ) : (
+                        <span className="font-medium text-violet-400">{(item as { date?: string }).date}</span>
+                      )}
+                    </td>
+                    <td className="px-5 py-4 align-middle">
+                      <span className="font-medium text-white">{item.title}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -260,7 +246,7 @@ export default function Home() {
       <section id="section-3" className="scroll-mt-6 border-b border-white/[0.08] px-6 py-16 sm:px-8 sm:scroll-mt-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-violet-400">
-            三、專案服務模組選擇 Service Packages
+            三、專案服務模組選擇
           </h2>
           <p className="mb-10 text-sm text-zinc-400">
             為確保專案品質並節省貴司行政對接成本，經紀顧問提供以下模組化選擇。將根據貴司需求等級（如：標準/資深）另行報價
