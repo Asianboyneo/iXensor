@@ -338,25 +338,29 @@ export default function Home() {
       <section className="border-b border-white/[0.08] px-6 py-16 sm:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-10 text-sm font-medium uppercase tracking-wider text-violet-400">
-            專案備註與責任界定
+            四、專案備註與責任界定
           </h2>
 
           <div className="space-y-6 text-sm text-zinc-400">
             <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-5">
-              <span className="font-medium text-zinc-300">最終決策權：</span>
-              經紀顧問團隊擔任輔佐與執行角色，專案之所有決策、內容發表、視覺產出，最終決定權與法律責任均歸屬於「安盛生科」。
+              <span className="font-medium text-zinc-300">最終決策與聲明權：</span>
+              經紀顧問團隊擔任策略輔佐與執行角色。專案中所有<span className="font-medium text-zinc-300">對外聲明（含社群發文、新聞稿、媒體曝光內容、官網聲明）</span>、活動決策及視覺產出，其最終決定權、發布權與法律責任均歸屬於「安盛生科」。顧問團隊僅就專業立場提供建議與方案撰寫。
             </div>
             <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-5">
               <span className="font-medium text-zinc-300">合規免責說明：</span>
-              凡涉及公司資訊披露、IR 投資人關係、生技醫療法規等專業內容，其最終審核權與合規擔保由安盛生科內部法務/IR 部門負責。經紀顧問負責流程對接，不承擔內容合規之法律責任。
+              凡涉及公司資訊披露、IR 投資人關係、生技醫療法規（如藥事法、廣告法）等專業內容，其最終審核權與合規擔保由安盛生科內部法務/IR 部門負責。經紀顧問負責流程對接與執行建議，不承擔內容合規之法律責任。
+            </div>
+            <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-5">
+              <span className="font-medium text-zinc-300">外部資源費用與規費承擔：</span>
+              專案執行過程中所產生之外部直接成本，包含但不限於：<span className="font-medium text-zinc-300">媒體採買費用、記者會場租硬體、第三方平台規費，以及因業務執行可能產生之行政罰鍰或損害賠償</span>。上述費用皆由「安盛生科」直接支付予第三方或承擔，不包含在經紀顧問之服務報酬內。
             </div>
             <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-5">
               <span className="font-medium text-zinc-300">一站式統籌服務：</span>
-              若選用加值模組，所有第三方服務（造型、妝髮、培訓）之篩選、溝通、發包與現場監督均由經紀顧問負責，確保服務品質與專案目標對齊。
+              若選用加值模組，所有第三方服務（造型、妝髮、培訓、攝影）之篩選、溝通、發包與現場監督均由經紀顧問負責，確保服務品質與專案目標對齊。
             </div>
             <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] p-5">
               <span className="font-medium text-zinc-300">行政與實報實銷：</span>
-              專案執行產生之額外必要支出（如：跨縣市車馬費、緊急採買項目）採實報實銷。除前述經貴司核可之包套服務外，不產生任何隱藏費用。
+              專案執行產生之額外必要代墊支出（如：跨縣市車馬費、緊急小額採買項目）採實報實銷。除前述經貴司核可之包套服務與外部資源預算外，不產生任何隱藏費用。
             </div>
           </div>
         </div>
