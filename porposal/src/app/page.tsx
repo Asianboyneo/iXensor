@@ -230,7 +230,7 @@ export default function Home() {
                 <tbody className="divide-y divide-white/[0.06]">
                   <tr className="bg-white/[0.02]">
                     <td className="px-4 py-3 text-white">核心顧問服務 (Phase 1-4)</td>
-                    <td className="px-4 py-3 text-zinc-400">9 週專屬顧問服務，含 4 場節目全流程執行。</td>
+                    <td className="px-4 py-3 text-zinc-400">專案顧問專屬服務，含 4 場節目全流程執行。</td>
                     <td className="px-4 py-3 text-violet-300 text-right">$150,000</td>
                   </tr>
                   <tr className="bg-white/[0.02]">
